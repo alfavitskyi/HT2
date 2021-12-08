@@ -68,10 +68,8 @@ public class TestRozetka {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='product-about__sticky']")));
         driver.findElement(By.xpath("//button[contains(@class,'buy-button button button_with')]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='cart-receipt__sum-price']")));
-        System.out.println("checkpoint");
         String [] notUpdSum = driver.findElement(By.xpath("//div[@class='cart-receipt__sum-price']")).getText().split(" ");
         int sum = Integer.parseInt(notUpdSum[0]);
-        System.out.println("Total amount "+sum);
         Assert.assertTrue(sum<500000);
     }
 @AfterTest
